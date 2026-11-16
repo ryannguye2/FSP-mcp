@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: fsp-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: FSP_URL_TOKEN
+        generateValue: true
+      - key: FSP_API_KEY
+        sync: false
+      - key: FSP_OPERATOR_ID
+        sync: false
